@@ -1,0 +1,234 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+  color: #333;
+}
+div:has(.time):first-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.time:first-child,
+.day{
+  display: block;
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+  transform: translateY(-100px);
+}
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  min-height: 400px;
+}
+
+.adder {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.adder input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.adder input:focus {
+  border-color: #667eea;
+}
+
+.adder button {
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adder button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+
+.tasks ul {
+  list-style: none;
+}
+
+.tasks li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-120%);
+    opacity: 0;
+    background-color: #ccc;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    background-color: #f8f9fa;
+  }
+}
+
+.tasks li:hover:not(:has(.done)) {
+  background: #e9ecef;
+}
+
+.tasks li h2 {
+  font-size: 18px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.task{
+  position: relative;
+}
+.del, .quit {
+  background: #dc3545;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.del:hover {
+  background: #c82333;
+}
+
+.done {
+  background: #28a745;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.done:hover {
+  background: #218838;
+}
+
+.task.tdone{
+  text-decoration: line-through;
+  opacity: .4;
+  background-color: #00A36C;
+}
+
+.popup{
+  display: flex;
+  position: fixed;
+  width: 60%;
+  height: 40%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 3rem;
+  z-index: 200;
+}
+
+.popup .quit{
+  position: absolute;
+  top: -10px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+}
+.overlay{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .adder {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .adder input {
+    width: 100%;
+  }
+
+  .adder button {
+    width: 100%;
+  }
+
+  .tasks li h2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .tasks li {
+    padding: 10px 15px;
+  }
+}

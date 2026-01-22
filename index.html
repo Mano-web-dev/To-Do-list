@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="My ToDo Web" />
+    <meta property="og:description" content="خلّص مهامك واحتفل بإنجازك 🎉" />
+    <meta
+      property="og:image"
+      content="https://mano-web-dev.github.io/To-Do-list/media/logo.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://mano-web-dev.github.io/To-Do-list"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="media/logo.jpg" type="image/jpg" />
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/master.css" />
+    <title>To-Do-list</title>
+  </head>
+  <body>
+    <div>
+      <span class="time">00:00:00 AM/PM</span>
+      <span class="day"></span>
+    </div>
+    <div class="container">
+      <div class="adder">
+        <input type="text" id="task" />
+        <button id="add">Add Task</button>
+      </div>
+      <div class="tasks">
+        <ul class="task-list"></ul>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
